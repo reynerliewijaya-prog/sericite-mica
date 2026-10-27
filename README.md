@@ -36,3 +36,7 @@ Public email and inquiry notification recipient: serciteindo@gmail.com only. Upl
 ## No-code text editor
 
 Run database/002_site_content.sql after the initial migration. After configuring Supabase/login, open Admin > Editor Konten, load the stored draft, choose a ZIP page, edit its main title/description, save draft or publish. The preview is text-only; use the website link to review the published result. Reload the public page after publishing. Published text is loaded from /api/content with textContent (no HTML injection); drafts require server-verified admin authorization. Existing original design remains if content/database is unavailable. Image uploads, colors, rearranging sections, contact/document/admin copy, and drag-and-drop are not supported by this first editor. Desktop/mobile variants are edited separately.
+
+## Admin appearance-only page
+
+/admin now opens the uploaded original admin.html mockup unchanged at /desain/admin.html. Counters, rows and upload controls there are example UI only, not live data. The authenticated CMS and content editor remain at /cms. No real private information is exposed by the static mockup.
