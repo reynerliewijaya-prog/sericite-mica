@@ -40,3 +40,7 @@ Run database/002_site_content.sql after the initial migration. After configuring
 ## Admin appearance-only page
 
 /admin now opens the uploaded original admin.html mockup unchanged at /desain/admin.html. Counters, rows and upload controls there are example UI only, not live data. The authenticated CMS and content editor remain at /cms. No real private information is exposed by the static mockup.
+
+## Current application areas
+
+Client website: /. Real authenticated admin CMS and content editor: /admin. Old /cms, /demo and static admin URLs redirect to /admin; example dashboard/login/form simulations are no longer served. Admin data appears only after server-verified login. Supabase, database migrations and provider/environment setup remain required before live operation.
