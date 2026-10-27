@@ -1,4 +1,5 @@
 import "server-only";
+import { allowedAdmin } from "./admin-allowlist";
 import { createClient } from "@supabase/supabase-js";
 export function env(name: string) {
   const value = process.env[name];
@@ -19,8 +20,12 @@ export async function admin(req: Request) {
   const { data, error } = await db().auth.getUser(token);
   return (
     !error &&
-    !!data.user?.email_confirmed_at &&
-    data.user.email?.toLowerCase() === env("ADMIN_EMAIL").toLowerCase()
+    allowedAdmin(
+      data.user?.email,
+      Boolean(data.user?.email_confirmed_at),
+      process.env.ADMIN_EMAILS,
+      process.env.ADMIN_EMAIL,
+    )
   );
 }
 export const privateHeaders = { "Cache-Control": "no-store" };

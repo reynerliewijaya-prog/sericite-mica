@@ -44,3 +44,21 @@ Run database/002_site_content.sql after the initial migration. After configuring
 ## Current application areas
 
 Client website: /. Real authenticated admin CMS and content editor: /admin. Old /cms, /demo and static admin URLs redirect to /admin; example dashboard/login/form simulations are no longer served. Admin data appears only after server-verified login. Supabase, database migrations and provider/environment setup remain required before live operation.
+
+## Sericite visual studio update
+
+The real `/admin` now uses a refined mineral/red Sericite dashboard identity,
+independent of TALC. Existing Supabase email/password authentication and admin
+allowlist are unchanged. The page editor adds image URL, primary image upload,
+and multi-image gallery (12 max). Save draft/publish uses existing site_content
+JSON fields; no additional SQL migration is required if 002_site_content exists.
+Published media appears in a separate media section at the end of the matching
+ZIP page, not as arbitrary replacement of original design images.
+
+Uploads use only Sericite's configured Supabase credentials and create public
+bucket `sericite-media` on first authorized upload. PNG/JPEG/WebP signatures,
+3 MB per image, same-origin and server admin authorization are enforced. Media
+is public; removing it from a page does not delete the Storage file. Keep private
+material out. First upload and live publish must be tested with the provider.
+No credentials, TALC configuration/data or new login IDs are copied. PDF upload
+and free-form section/layout editing remain unavailable and are labeled as such.
