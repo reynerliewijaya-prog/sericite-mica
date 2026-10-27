@@ -20,7 +20,11 @@ export async function admin(req: Request) {
   return (
     !error &&
     !!data.user?.email_confirmed_at &&
-    data.user.email?.toLowerCase() === env("ADMIN_EMAIL").toLowerCase()
+    !!data.user.email &&
+    (process.env.ADMIN_EMAILS || env("ADMIN_EMAIL"))
+      .split(",")
+      .map((email) => email.trim().toLowerCase())
+      .includes(data.user.email.toLowerCase())
   );
 }
 export const privateHeaders = { "Cache-Control": "no-store" };
