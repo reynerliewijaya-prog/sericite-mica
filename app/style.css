@@ -813,3 +813,42 @@ body:has(.admin-shell) > .site-footer {
     padding: 14px;
   }
 }
+.demo-warning {
+  padding: 14px 18px;
+  border: 1px solid #e4c36c;
+  border-radius: 10px;
+  background: #fff4d6;
+  color: #674b12 !important;
+  max-width: none;
+}
+.demo-editor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+.demo-preview {
+  border-radius: 16px;
+  background: #0f1a2b;
+  color: white;
+  padding: 40px;
+  overflow-wrap: anywhere;
+  align-self: start;
+}
+.demo-preview small {
+  font: 12px monospace;
+  color: #edafb3;
+  letter-spacing: 0.1em;
+}
+.demo-preview h2 {
+  font-size: 38px;
+  line-height: 1.15;
+}
+.demo-preview p {
+  color: #d5dce7;
+}
+@media (max-width: 900px) {
+  .demo-editor {
+    grid-template-columns: 1fr;
+  }
+}
