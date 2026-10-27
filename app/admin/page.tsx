@@ -45,15 +45,18 @@ export default function Admin() {
     id?: string,
     kind?: string,
     content = false,
+    media = false,
   ) {
     const {
       data: { session },
     } = await auth().auth.getSession();
     if (!session) throw Error("Silakan login kembali.");
     const response = await fetch(
-      (content
-        ? "/api/content" + (method === "GET" ? "?draft=1" : "")
-        : "/api/admin") +
+      (media
+        ? "/api/media"
+        : content
+          ? "/api/content" + (method === "GET" ? "?draft=1" : "")
+          : "/api/admin") +
         (id
           ? "?id=" + encodeURIComponent(id) + (kind ? "&kind=" + kind : "")
           : ""),
@@ -62,9 +65,16 @@ export default function Admin() {
         cache: "no-store",
         headers: {
           Authorization: "Bearer " + session.access_token,
-          "Content-Type": "application/json",
+          ...(body instanceof FormData
+            ? {}
+            : { "Content-Type": "application/json" }),
         },
-        body: body ? JSON.stringify(body) : undefined,
+        body:
+          body instanceof FormData
+            ? body
+            : body
+              ? JSON.stringify(body)
+              : undefined,
       },
     );
     if (!response.ok) throw Error("Akses ditolak atau layanan belum tersedia.");
@@ -74,7 +84,7 @@ export default function Admin() {
     setData(await call());
   }
   return (
-    <main className="admin-shell">
+    <main className="admin-shell sericite-studio">
       <aside className="admin-sidebar">
         <div className="admin-brand">
           <img
@@ -84,7 +94,7 @@ export default function Admin() {
             height="63"
           />
           <strong>
-            CMS Admin<small>Sericite Mica</small>
+            SERICITE<small>CONTENT STUDIO</small>
           </strong>
         </div>
         {[
@@ -110,7 +120,7 @@ export default function Admin() {
         <span className="eyebrow">AREA TERBATAS</span>
         <h1>
           {!data
-            ? "Masuk CMS Admin"
+            ? "Selamat datang di Sericite Studio"
             : (
                 {
                   inquiries: "Log Permintaan",
@@ -304,6 +314,19 @@ export default function Admin() {
             )}
             {tab === "content" && (
               <ContentEditor
+                upload={async (file) => {
+                  const f = new FormData();
+                  f.append("file", file);
+                  const result = await call(
+                    "POST",
+                    f,
+                    undefined,
+                    undefined,
+                    false,
+                    true,
+                  );
+                  return result.url;
+                }}
                 request={(method, body) =>
                   call(method, body, undefined, undefined, true)
                 }

@@ -23,12 +23,17 @@ export async function POST(req: Request) {
     if (!sameOrigin(req) || !(await admin(req)))
       return new Response(null, { status: 403 });
     const text = await req.text();
-    if (text.length > 12000) return new Response(null, { status: 413 });
+    if (text.length > 40000) return new Response(null, { status: 413 });
     const parsed = contentSchema.safeParse(JSON.parse(text));
     if (!parsed.success)
       return Response.json({ error: "Konten tidak valid." }, { status: 400 });
-    const { page, title, description, publish } = parsed.data;
-    const value = { title, description };
+    const { page, title, description, image, gallery, publish } = parsed.data;
+    const value = {
+      title,
+      description,
+      ...(image !== undefined ? { image } : {}),
+      ...(gallery !== undefined ? { gallery } : {}),
+    };
     const client = db();
     const { data: existing, error: lookupError } = await client
       .from("site_content")
