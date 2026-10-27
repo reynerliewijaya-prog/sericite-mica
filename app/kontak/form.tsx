@@ -34,6 +34,7 @@ export default function Inquiry() {
   }
   return (
     <form
+      className="contact-form"
       onSubmit={async (e) => {
         e.preventDefault();
         setBusy(true);
@@ -47,7 +48,7 @@ export default function Inquiry() {
             body: JSON.stringify({
               name: values.get("name"),
               email: values.get("email"),
-              company: values.get("company"),
+              company: "",
               message: values.get("message"),
               website: values.get("website"),
               consent: values.get("consent") === "on",
@@ -66,8 +67,14 @@ export default function Inquiry() {
         }
       }}
     >
+      <h2>Kirim pesan</h2>
       <label>
-        Nama
+        <span>
+          Nama Lengkap{" "}
+          <b className="required-mark" aria-hidden="true">
+            *
+          </b>
+        </span>
         <input
           name="name"
           required
@@ -77,7 +84,12 @@ export default function Inquiry() {
         />
       </label>
       <label>
-        Email
+        <span>
+          Email Perusahaan{" "}
+          <b className="required-mark" aria-hidden="true">
+            *
+          </b>
+        </span>
         <input
           name="email"
           type="email"
@@ -87,11 +99,12 @@ export default function Inquiry() {
         />
       </label>
       <label>
-        Perusahaan
-        <input name="company" maxLength={160} autoComplete="organization" />
-      </label>
-      <label>
-        Pesan / produk yang dibutuhkan
+        <span>
+          Pesan{" "}
+          <b className="required-mark" aria-hidden="true">
+            *
+          </b>
+        </span>
         <textarea
           name="message"
           required
@@ -118,7 +131,15 @@ export default function Inquiry() {
           Formulir belum aktif: verifikasi keamanan belum dikonfigurasi.
         </p>
       )}
-      <button disabled={busy || !token}>Kirim Permintaan</button>
+      <div className="contact-submit">
+        <small>
+          Verifikasi keamanan menggunakan Cloudflare Turnstile. Jangan sertakan
+          data rahasia dalam pesan.
+        </small>
+        <button disabled={busy || !token}>
+          {busy ? "Menyimpan…" : "Kirim Pesan"}
+        </button>
+      </div>
       <p role="status" aria-live="polite">
         {status}
       </p>
