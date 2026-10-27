@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beranda Ponsel</title>
+<script src="assets/dc59ca42-a080-43ad-92a2-6a3e73cefcf3.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iIq129k.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1isq129k.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iAq129k.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iEq129k.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl1FgtIU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlRFgtIU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl9FgtIU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl5FgtIU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggqxSuXd.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSuXd.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggSxSuXd.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggixSuXd.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/e3a28b44-a788-41b0-b75d-e8aebef51d8b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggqxSuXd.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSuXd.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggSxSuXd.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggixSuXd.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/e3a28b44-a788-41b0-b75d-e8aebef51d8b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggqxSuXd.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSuXd.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggSxSuXd.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggixSuXd.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/e3a28b44-a788-41b0-b75d-e8aebef51d8b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggqxSuXd.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSuXd.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggSxSuXd.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggixSuXd.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/e3a28b44-a788-41b0-b75d-e8aebef51d8b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggqxSuXd.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSuXd.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggSxSuXd.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggixSuXd.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/e3a28b44-a788-41b0-b75d-e8aebef51d8b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0;background:#F5F3EF}
+a{color:inherit}
+.btn:active{filter:brightness(.9)}
+button:focus-visible,a:focus-visible{outline:2px solid #C0262D;outline-offset:2px}
+</style>
+</helmet>
+<div style="width:390px;font-family:'Manrope',system-ui,sans-serif;color:#17202E;background:#F5F3EF;line-height:1.5;overflow:hidden">
+
+<header style="background:#fff;border-bottom:1px solid #E3DFD8;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-sizing:border-box">
+<a href="beranda-mobile.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#C0262D">
+<img src="assets/9499a994-a7ee-406f-86cc-04382f46c8e2.png" alt="Logo PT Sericite Mica Indonesia" width="63" height="69" style="width:40px;height:auto;display:block">
+<span style="font-weight:800;font-size:12px;line-height:1.15;letter-spacing:.02em">PT SERICITE MICA<br>INDONESIA</span>
+</a>
+<div style="display:flex;align-items:center;gap:8px">
+<div role="group" aria-label="Bahasa" style="display:flex;border:1px solid #D5D0C7;border-radius:8px;overflow:hidden">
+<button type="button" aria-pressed="true" style="height:44px;min-width:44px;border:0;background:#17202E;color:#fff;font:700 12px 'Manrope',sans-serif">ID</button>
+<button type="button" aria-pressed="false" style="height:44px;min-width:44px;border:0;background:#fff;color:#17202E;font:700 12px 'Manrope',sans-serif">EN</button>
+</div>
+<button type="button" aria-label="Buka menu" style="width:44px;height:44px;border:1px solid #D5D0C7;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17202E" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+</header>
+
+<section style="background:#0F1A2B;color:#fff;padding:40px 20px 48px;display:flex;flex-direction:column;gap:20px;background-image:radial-gradient(ellipse at 80% 90%,rgba(232,211,230,.22),transparent 60%)">
+<div style="display:flex;align-items:center;gap:10px;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;color:#F28B90"><span style="width:24px;height:1px;background:#F28B90"></span>SPECIALIST MANUFACTURER</div>
+<h1 style="margin:0;font-size:46px;line-height:1.03;font-weight:800;letter-spacing:-.03em">From Mineral<br>to Beauty</h1>
+<p style="margin:0;font-size:16px;color:#B8C2D1">Sericite Mica &amp; Pearlescent Pigments ultra-pure untuk industri kosmetik dan personal care.</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<a href="katalog-mobile.html" class="btn" style="display:flex;align-items:center;justify-content:center;height:52px;background:#C0262D;color:#fff;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none">Jelajahi Katalog →</a>
+<a href="dokumen.html" class="btn" style="display:flex;align-items:center;justify-content:center;height:52px;border:1px solid #5F6C82;color:#fff;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none">Minta Sampel Produk</a>
+</div>
+<div role="img" aria-label="Ilustrasi serbuk mika berkilau" style="position:relative;width:220px;height:220px;align-self:center;margin-top:12px">
+<div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.95),rgba(255,255,255,0) 46%),conic-gradient(from 210deg,#E8D3E6,#CFE3EE,#F4E7D2,#E3D0EA,#D2E6E3,#E8D3E6);box-shadow:0 24px 60px rgba(0,0,0,.45)"></div>
+<div style="position:absolute;left:-14px;bottom:18px;background:#fff;color:#17202E;border-radius:10px;padding:8px 12px"><div style="font:500 10px 'IBM Plex Mono',monospace;color:#5B6472;letter-spacing:.08em">PARTICLE SIZE</div><div style="font:500 14px 'IBM Plex Mono',monospace">7µm – 60µm</div></div>
+</div>
+</section>
+
+<section style="background:#fff;border-bottom:1px solid #E3DFD8;padding:24px 20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px">
+<div><div style="font-size:24px;font-weight:800;letter-spacing:-.02em">7 – 200 µm</div><div style="font-size:12px;color:#5B6472">Ukuran partikel</div></div>
+<div><div style="font-size:24px;font-weight:800;letter-spacing:-.02em">5 grup</div><div style="font-size:12px;color:#5B6472">Luster</div></div>
+<div><div style="font-size:24px;font-weight:800;letter-spacing:-.02em">10 kode</div><div style="font-size:12px;color:#5B6472">Surface treatment</div></div>
+<div><div style="font-size:24px;font-weight:800;letter-spacing:-.02em">4 dokumen</div><div style="font-size:12px;color:#5B6472">COA, MSDS, TDS, Spek</div></div>
+</section>
+
+<section style="padding:44px 20px 24px">
+<div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;color:#C0262D">KATALOG</div>
+<h2 style="margin:6px 0 20px;font-size:28px;letter-spacing:-.02em;line-height:1.1">Kategori Bahan Utama</h2>
+<div style="display:flex;flex-direction:column;gap:14px">
+<a href="katalog-mobile.html" style="display:flex;background:#fff;border:1px solid #E3DFD8;border-radius:14px;overflow:hidden;text-decoration:none;color:#17202E">
+<div style="flex:0 0 84px;background:radial-gradient(circle at 28% 30%,rgba(255,255,255,.95),rgba(255,255,255,0) 40%),linear-gradient(135deg,#F7E4EF,#CFE0F0 50%,#F6EBD3)"></div>
+<div style="padding:16px;display:flex;flex-direction:column;gap:4px"><span style="align-self:flex-start;background:#FBE9EA;color:#A31F26;font-weight:700;font-size:11px;padding:2px 8px;border-radius:6px">Sericite Glossy</span><span style="font-weight:800;font-size:17px">Sermic SG Series</span><span style="font-size:13px;color:#5B6472">7µm–60µm · High Luster &amp; Pearly Effect</span></div>
+</a>
+<a href="katalog-mobile.html" style="display:flex;background:#fff;border:1px solid #E3DFD8;border-radius:14px;overflow:hidden;text-decoration:none;color:#17202E">
+<div style="flex:0 0 84px;background:radial-gradient(circle at 50% 40%,#F2EFEA,#E1DCD3)"></div>
+<div style="padding:16px;display:flex;flex-direction:column;gap:4px"><span style="align-self:flex-start;background:#ECE9E3;color:#3E4654;font-weight:700;font-size:11px;padding:2px 8px;border-radius:6px">Sericite Matte</span><span style="font-weight:800;font-size:17px">Sermic SM Series</span><span style="font-size:13px;color:#5B6472">7µm–10µm · Smooth Soft-Focus Finish</span></div>
+</a>
+<a href="katalog-mobile.html" style="display:flex;background:#fff;border:1px solid #E3DFD8;border-radius:14px;overflow:hidden;text-decoration:none;color:#17202E">
+<div style="flex:0 0 84px;background:radial-gradient(circle at 30% 28%,#fff,rgba(255,255,255,0) 45%),linear-gradient(135deg,#FFFFFF,#E4EEF5)"></div>
+<div style="padding:16px;display:flex;flex-direction:column;gap:4px"><span style="align-self:flex-start;background:#E3EEF7;color:#1F4E79;font-weight:700;font-size:11px;padding:2px 8px;border-radius:6px">Synthetic Mica</span><span style="font-weight:800;font-size:17px">Sermic MF Series</span><span style="font-size:13px;color:#5B6472">Synthetic Fluorphlogopite · Ultra Glossy &amp; Pure White</span></div>
+</a>
+</div>
+</section>
+
+<section style="padding:24px 20px 44px">
+<div style="background:#C0262D;color:#fff;border-radius:18px;padding:28px 22px;display:flex;flex-direction:column;gap:14px">
+<div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em">SURFACE TREATMENT</div>
+<h2 style="margin:0;font-size:26px;letter-spacing:-.02em;line-height:1.12">Customized Surface Treatments</h2>
+<p style="margin:0;font-size:14px">Ketahanan air, minyak, dan rasa halus pada formula kosmetik.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="background:rgba(255,255,255,.16);border-radius:8px;padding:4px 12px;font:500 13px 'IBM Plex Mono',monospace">DM</span>
+<span style="background:rgba(255,255,255,.16);border-radius:8px;padding:4px 12px;font:500 13px 'IBM Plex Mono',monospace">TC</span>
+<span style="background:rgba(255,255,255,.16);border-radius:8px;padding:4px 12px;font:500 13px 'IBM Plex Mono',monospace">LL</span>
+<span style="background:rgba(255,255,255,.16);border-radius:8px;padding:4px 12px;font-size:13px">dll.</span>
+</div>
+<a href="surface.html" class="btn" style="display:flex;align-items:center;justify-content:center;height:52px;background:#fff;color:#A31F26;border-radius:10px;font-weight:800;font-size:15px;text-decoration:none">Lihat Opsi Treatment</a>
+</div>
+</section>
+
+<section style="background:#fff;border-top:1px solid #E3DFD8;border-bottom:1px solid #E3DFD8;padding:40px 20px;display:flex;flex-direction:column;gap:18px">
+<div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;color:#C0262D">DOKUMEN TEKNIS</div>
+<h2 style="margin:0;font-size:26px;letter-spacing:-.02em;line-height:1.12">Verifikasi kepatuhan tanpa menunggu</h2>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+<div style="border:1px solid #E3DFD8;border-radius:12px;padding:16px;background:#F5F3EF"><div style="font:500 18px 'IBM Plex Mono',monospace;color:#C0262D">COA</div><div style="font-size:12px;color:#5B6472">Certificate of Analysis</div></div>
+<div style="border:1px solid #E3DFD8;border-radius:12px;padding:16px;background:#F5F3EF"><div style="font:500 18px 'IBM Plex Mono',monospace;color:#C0262D">MSDS</div><div style="font-size:12px;color:#5B6472">Material Safety Data Sheet</div></div>
+<div style="border:1px solid #E3DFD8;border-radius:12px;padding:16px;background:#F5F3EF"><div style="font:500 18px 'IBM Plex Mono',monospace;color:#C0262D">TDS</div><div style="font-size:12px;color:#5B6472">Technical Data Sheet</div></div>
+<div style="border:1px solid #E3DFD8;border-radius:12px;padding:16px;background:#F5F3EF"><div style="font:500 18px 'IBM Plex Mono',monospace;color:#C0262D">SPEC</div><div style="font-size:12px;color:#5B6472">Spesifikasi Produk</div></div>
+</div>
+<a href="dokumen.html" class="btn" style="display:flex;align-items:center;justify-content:center;height:52px;background:#17202E;color:#fff;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none">Minta Dokumen →</a>
+</section>
+
+<section style="background:#0F1A2B;color:#fff;padding:44px 20px;display:flex;flex-direction:column;gap:18px">
+<h2 style="margin:0;font-size:28px;letter-spacing:-.02em;line-height:1.12">Butuh sampel untuk formula baru?</h2>
+<a href="dokumen.html" class="btn" style="display:flex;align-items:center;justify-content:center;height:52px;background:#C0262D;color:#fff;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none">Minta Sampel Produk</a>
+</section>
+
+<footer style="background:#17202E;color:#B8C2D1;padding:32px 20px;font-size:13px;display:flex;flex-direction:column;gap:6px">
+<div style="color:#fff;font-weight:800;font-size:15px">PT SERICITE MICA INDONESIA</div>
+<div>Specialist Manufacturer of Sericite Mica &amp; Pearlescent Pigments</div>
+<a href="mailto:serciteindo@gmail.com" style="padding:8px 0;text-decoration:none">serciteindo@gmail.com</a>
+<div>www.sericite-mica.com</div>
+<div style="margin-top:12px;padding-top:12px;border-top:1px solid #2C3849">© 2026 PT Sericite Mica Indonesia</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:3000}}">
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+
+
+</body></html>

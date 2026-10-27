@@ -24,3 +24,7 @@ Every CMS request verifies the Supabase access token, confirmed email and server
 Configure backups, retention/deletion procedures, incident response, provider spending limits, and verified privacy contact/policy. Add shared rate limiting/WAF rules appropriate to traffic and run independent security review. CMS supports product creation/editing/deletion and inquiry deletion; admin MFA enforcement and audit logs remain follow-up work. Admin sees latest 100 inquiries only. Never collect passwords, payment information, or trade secrets in contact forms. No service resources are provisioned by this repository.
 
 Original supplied assets and font license are preserved under `public/assets/`; live pages use system fonts and do not depend on the original design runtime. Layout is rebuilt responsively rather than iframe-rendered. Visual browser and live provider tests require a configured deployment.
+
+## Original ZIP design
+
+The homepage now redirects to `/desain/index.html`, serving the supplied ZIP design and original navigation/assets. Original contact/document prototype forms are replaced with a link to `/kontak` (real application form), and `/admin` remains the authenticated CMS. Desktop and mobile design files remain separate, as in the ZIP; this is not a claim of responsive parity or production readiness. The original design catalog uses bundled example data, not the CMS catalog at `/katalog`.
