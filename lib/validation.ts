@@ -1,5 +1,13 @@
 import { z } from "zod";
 export const inquirySchema = z.object({
+  phone: z.string().trim().min(6).max(40).optional(),
+  documents: z
+    .array(
+      z.enum(["COA", "MSDS", "TDS", "Spesifikasi Produk", "Sampel Produk"]),
+    )
+    .min(1)
+    .max(5)
+    .optional(),
   name: z.string().trim().min(2).max(120),
   email: z.email().max(254),
   company: z.string().trim().max(160),

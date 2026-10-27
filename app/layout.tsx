@@ -20,9 +20,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/profil">Profil</Link>
             <Link href="/katalog">Katalog Produk</Link>
             <Link href="/surface">Surface Treatment</Link>
+            <Link href="/dokumen">Permintaan Dokumen</Link>
             <Link href="/kontak">Kontak</Link>
           </nav>
-          <Link className="button" href="/kontak">
+          <Link className="button" href="/dokumen">
             Minta Sampel
           </Link>
         </header>

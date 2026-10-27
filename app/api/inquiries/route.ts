@@ -13,7 +13,14 @@ export async function POST(req: Request) {
         { error: "Periksa isian dan persetujuan Anda." },
         { status: 400 },
       );
-    const { token, website, consent, ...input } = parsed.data;
+    const { token, website, consent, phone, documents, ...input } = parsed.data;
+    if (documents && (!phone || !input.company.trim()))
+      return Response.json(
+        { error: "Perusahaan dan nomor telepon wajib diisi." },
+        { status: 400 },
+      );
+    if (documents)
+      input.message = `Jenis permintaan: ${documents.join(", ")}\nTelepon: ${phone}\n\n${input.message}`;
     const verification = await fetch(
       "https://challenges.cloudflare.com/turnstile/v0/siteverify",
       {

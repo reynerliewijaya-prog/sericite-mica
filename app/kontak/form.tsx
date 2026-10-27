@@ -10,7 +10,12 @@ declare global {
     };
   }
 }
-export default function Inquiry() {
+export default function Inquiry({
+  documents = false,
+}: {
+  documents?: boolean;
+}) {
+  const [picked, setPicked] = useState<string[]>(["COA"]);
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
   const [token, setToken] = useState("");
@@ -34,9 +39,13 @@ export default function Inquiry() {
   }
   return (
     <form
-      className="contact-form"
+      className={documents ? "contact-form document-form" : "contact-form"}
       onSubmit={async (e) => {
         e.preventDefault();
+        if (documents && picked.length === 0) {
+          setStatus("Pilih minimal satu jenis dokumen.");
+          return;
+        }
         setBusy(true);
         setStatus("Menyimpan…");
         const form = e.currentTarget;
@@ -48,8 +57,11 @@ export default function Inquiry() {
             body: JSON.stringify({
               name: values.get("name"),
               email: values.get("email"),
-              company: "",
+              company: documents ? values.get("company") : "",
               message: values.get("message"),
+              ...(documents
+                ? { phone: values.get("phone"), documents: picked }
+                : {}),
               website: values.get("website"),
               consent: values.get("consent") === "on",
               token,
@@ -67,7 +79,7 @@ export default function Inquiry() {
         }
       }}
     >
-      <h2>Kirim pesan</h2>
+      {!documents && <h2>Kirim pesan</h2>}
       <label>
         <span>
           Nama Lengkap{" "}
@@ -83,6 +95,17 @@ export default function Inquiry() {
           autoComplete="name"
         />
       </label>
+      {documents && (
+        <label>
+          Perusahaan <span className="required-mark">*</span>
+          <input
+            name="company"
+            required
+            maxLength={160}
+            autoComplete="organization"
+          />
+        </label>
+      )}
       <label>
         <span>
           Email Perusahaan{" "}
@@ -98,9 +121,54 @@ export default function Inquiry() {
           autoComplete="email"
         />
       </label>
-      <label>
+      {documents && (
+        <>
+          <label>
+            Nomor HP / WhatsApp <span className="required-mark">*</span>
+            <input
+              name="phone"
+              type="tel"
+              required
+              minLength={6}
+              maxLength={40}
+              autoComplete="tel"
+            />
+          </label>
+          <fieldset className="document-types">
+            <legend>
+              Jenis Dokumen yang Dibutuhkan{" "}
+              <span className="required-mark">*</span>
+            </legend>
+            <div>
+              {[
+                "COA",
+                "MSDS",
+                "TDS",
+                "Spesifikasi Produk",
+                "Sampel Produk",
+              ].map((type) => (
+                <button
+                  key={type}
+                  type="button"
+                  aria-pressed={picked.includes(type)}
+                  onClick={() =>
+                    setPicked(
+                      picked.includes(type)
+                        ? picked.filter((x) => x !== type)
+                        : [...picked, type],
+                    )
+                  }
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+          </fieldset>
+        </>
+      )}
+      <label className={documents ? "document-details" : undefined}>
         <span>
-          Pesan{" "}
+          {documents ? "Detail Produk Target" : "Pesan"}{" "}
           <b className="required-mark" aria-hidden="true">
             *
           </b>
@@ -110,7 +178,12 @@ export default function Inquiry() {
           required
           minLength={10}
           maxLength={4000}
-          rows={5}
+          rows={documents ? 4 : 5}
+          placeholder={
+            documents
+              ? "Kode produk, jumlah sampel, dan aplikasi formula"
+              : undefined
+          }
         />
       </label>
       <div className="trap" aria-hidden="true">
@@ -137,7 +210,7 @@ export default function Inquiry() {
           data rahasia dalam pesan.
         </small>
         <button disabled={busy || !token}>
-          {busy ? "Menyimpan…" : "Kirim Pesan"}
+          {busy ? "Menyimpan…" : documents ? "Kirim Permintaan" : "Kirim Pesan"}
         </button>
       </div>
       <p role="status" aria-live="polite">

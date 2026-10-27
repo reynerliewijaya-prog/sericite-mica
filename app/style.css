@@ -436,3 +436,126 @@ main {
     width: 100%;
   }
 }
+
+.document-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  padding-top: 48px;
+  padding-bottom: 88px;
+}
+.document-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 20px;
+}
+.document-form > fieldset,
+.document-form > .document-details,
+.document-form > .check,
+.document-form > .contact-submit,
+.document-form > p,
+.document-form > div:not(.trap) {
+  grid-column: 1/-1;
+}
+.document-types {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.document-types legend {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.document-types > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.document-types button {
+  min-height: 44px;
+  background: white;
+  color: #17202e;
+  border: 1px solid #bdb6aa;
+  border-radius: 10px;
+  padding: 0 18px;
+  font-family: Manrope, system-ui, sans-serif;
+}
+.document-types button[aria-pressed="true"] {
+  background: #17202e;
+  color: white;
+  border-color: #17202e;
+}
+.document-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.document-process {
+  background: #0f1a2b;
+  color: white;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.document-process > span {
+  font: 500 12px monospace;
+  letter-spacing: 0.2em;
+  color: #f28b90;
+}
+.document-process > div {
+  display: flex;
+  gap: 14px;
+}
+.document-process b {
+  flex: 0 0 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #c0262d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+.document-process p {
+  font-size: 14px;
+  color: #d5dce7;
+  margin: 0;
+}
+.document-direct {
+  background: white;
+  border: 1px solid #e3dfd8;
+  border-radius: 20px;
+  padding: 28px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.document-direct h2 {
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+.document-direct a {
+  color: #a31f26;
+  font-weight: 700;
+  text-decoration: none;
+}
+.document-direct p {
+  color: #5b6472;
+  margin: 6px 0 0;
+}
+@media (max-width: 900px) {
+  .document-columns {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .document-form {
+    grid-template-columns: 1fr;
+  }
+  .document-columns {
+    padding-top: 28px;
+    padding-bottom: 48px;
+  }
+}

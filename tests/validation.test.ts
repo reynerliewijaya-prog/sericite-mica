@@ -50,3 +50,28 @@ test("reject invalid publication flag", () =>
     }).success,
     false,
   ));
+test("accept document request with phone", () =>
+  assert.equal(
+    inquirySchema.safeParse({
+      ...valid,
+      company: "PT Test",
+      phone: "+628123456789",
+      documents: ["COA", "Sampel Produk"],
+    }).success,
+    true,
+  ));
+test("reject unknown document types", () =>
+  assert.equal(
+    inquirySchema.safeParse({ ...valid, documents: ["INVALID"] }).success,
+    false,
+  ));
+test("reject empty document selection", () =>
+  assert.equal(
+    inquirySchema.safeParse({ ...valid, documents: [] }).success,
+    false,
+  ));
+test("reject oversized phone", () =>
+  assert.equal(
+    inquirySchema.safeParse({ ...valid, phone: "1".repeat(41) }).success,
+    false,
+  ));
