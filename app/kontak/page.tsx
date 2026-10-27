@@ -55,10 +55,8 @@ export default function Contact() {
           <div className="contact-info-card">
             <Icon type="mail" />
             <div>
-              <small>Email sementara</small>
-              <a href="mailto:reynerlie.wijaya@gmail.com">
-                reynerlie.wijaya@gmail.com
-              </a>
+              <small>Email resmi</small>
+              <a href="mailto:serciteindo@gmail.com">serciteindo@gmail.com</a>
             </div>
           </div>
           <div className="contact-info-card">

@@ -59,7 +59,7 @@ export async function POST(req: Request) {
         },
         body: JSON.stringify({
           from: env("EMAIL_FROM"),
-          to: [env("CONTACT_EMAIL")],
+          to: ["serciteindo@gmail.com"],
           reply_to: input.email,
           subject: "Permintaan baru dari website Sericite Mica",
           text: `Permintaan ${record.id} telah disimpan. Buka CMS admin untuk melihat isinya.`,

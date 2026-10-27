@@ -559,3 +559,45 @@ main {
     padding-bottom: 48px;
   }
 }
+
+.site-header {
+  font-family: Manrope, system-ui, sans-serif;
+  max-width: none;
+  padding: 14px max(32px, calc((100vw - 1136px) / 2));
+  gap: 12px 28px;
+}
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+.site-header .brand img {
+  object-fit: contain;
+  width: 52px;
+  height: auto;
+}
+.site-header nav {
+  font-weight: 600;
+  gap: 0 22px;
+  flex: 1 1 420px;
+}
+.site-header nav a {
+  padding: 12px 0;
+}
+.site-footer {
+  font-family: Manrope, system-ui, sans-serif;
+  background: #17202e;
+  font-size: 13px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+@media (max-width: 700px) {
+  .site-header {
+    padding: 14px 20px;
+  }
+  .site-header nav {
+    gap: 0 14px;
+  }
+}

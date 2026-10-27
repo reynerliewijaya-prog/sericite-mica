@@ -38,9 +38,7 @@ export default function Documents() {
           </div>
           <div className="document-direct">
             <h2>Hubungi langsung</h2>
-            <a href="mailto:reynerlie.wijaya@gmail.com">
-              reynerlie.wijaya@gmail.com
-            </a>
+            <a href="mailto:serciteindo@gmail.com">serciteindo@gmail.com</a>
             <p>www.sericite-mica.com</p>
           </div>
         </aside>
