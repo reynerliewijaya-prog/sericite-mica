@@ -77,7 +77,14 @@ export default function Admin() {
               : undefined,
       },
     );
-    if (!response.ok) throw Error("Akses ditolak atau layanan belum tersedia.");
+    if (response.status === 401 || response.status === 403)
+      throw Error(
+        "Akun belum diizinkan sebagai admin Sericite, atau origin preview belum dikonfigurasi. Pastikan akun terkonfirmasi dan tercantum pada daftar admin.",
+      );
+    if (!response.ok)
+      throw Error(
+        "Database CMS Sericite belum tersedia. Periksa tabel products, inquiries, site_content serta konfigurasi Supabase.",
+      );
     return response.json();
   }
   async function load() {
