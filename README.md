@@ -32,3 +32,7 @@ The homepage now redirects to `/desain/index.html`, serving the supplied ZIP des
 ## Brand alignment
 
 Public email and inquiry notification recipient: serciteindo@gmail.com only. Uploaded logo is used in the application header, including document requests, and original design headers. Public profile, surface, catalog, and product routes open their ZIP designs. CMS-published products remain separately accessible at /produk-database; original example catalog is labeled accordingly. Document/contact forms retain real API validation, not simulated ZIP success. Service configuration and visual browser verification are still outstanding.
+
+## No-code text editor
+
+Run database/002_site_content.sql after the initial migration. After configuring Supabase/login, open Admin > Editor Konten, load the stored draft, choose a ZIP page, edit its main title/description, save draft or publish. The preview is text-only; use the website link to review the published result. Reload the public page after publishing. Published text is loaded from /api/content with textContent (no HTML injection); drafts require server-verified admin authorization. Existing original design remains if content/database is unavailable. Image uploads, colors, rearranging sections, contact/document/admin copy, and drag-and-drop are not supported by this first editor. Desktop/mobile variants are edited separately.

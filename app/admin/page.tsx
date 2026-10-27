@@ -1,4 +1,5 @@
 "use client";
+import ContentEditor from "./content-editor";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { useRef, useState } from "react";
 type Product = {
@@ -43,13 +44,16 @@ export default function Admin() {
     body?: unknown,
     id?: string,
     kind?: string,
+    content = false,
   ) {
     const {
       data: { session },
     } = await auth().auth.getSession();
     if (!session) throw Error("Silakan login kembali.");
     const response = await fetch(
-      "/api/admin" +
+      (content
+        ? "/api/content" + (method === "GET" ? "?draft=1" : "")
+        : "/api/admin") +
         (id
           ? "?id=" + encodeURIComponent(id) + (kind ? "&kind=" + kind : "")
           : ""),
@@ -89,6 +93,7 @@ export default function Admin() {
           ["documents", "Dokumen PDF"],
           ["surface", "Surface Treatment"],
           ["settings", "Pengaturan"],
+          ["content", "Editor Konten"],
         ].map(([id, label]) => (
           <button
             type="button"
@@ -113,6 +118,7 @@ export default function Admin() {
                   documents: "Dokumen PDF",
                   surface: "Surface Treatment",
                   settings: "Pengaturan",
+                  content: "Editor Konten",
                 } as Record<string, string>
               )[tab]}
         </h1>
@@ -295,6 +301,13 @@ export default function Admin() {
                   ))}
                 </div>
               </>
+            )}
+            {tab === "content" && (
+              <ContentEditor
+                request={(method, body) =>
+                  call(method, body, undefined, undefined, true)
+                }
+              />
             )}
             {tab === "documents" && (
               <article className="card">
